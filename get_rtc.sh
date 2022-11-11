@@ -40,6 +40,7 @@ case $i in
     ;; 
   -h)
     print_usage
+    exit 0
     ;;
 esac
 done
