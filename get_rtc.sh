@@ -43,9 +43,12 @@ do
 case $i in
   -no_ping)
     skip_ping=true
+    echo "No Ping Mode"
     ;; 
   -h)
     print_usage
+    ;;
+esac
 done
 
 for ip in ${ips[@]}
