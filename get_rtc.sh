@@ -31,13 +31,6 @@ function print_usage
   echo "(Example) ${0} www.dhqhrtnwl.shop -no_ping"
 }
 
-if [ "${1}" != "" ]; then
-  ip="${1}"
-  echo "Checking IP ${ip}"
-  get_rtc "${ip}"
-  exit 0
-fi
-
 for i in "$@"
 do
 case $i in
@@ -50,6 +43,13 @@ case $i in
     ;;
 esac
 done
+
+if [ "${1}" != "" ]; then
+  ip="${1}"
+  echo "Checking IP ${ip}"
+  get_rtc "${ip}"
+  exit 0
+fi
 
 for ip in ${ips[@]}
 do
