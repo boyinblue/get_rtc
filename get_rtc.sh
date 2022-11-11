@@ -17,8 +17,10 @@ function get_rtc
     fi
   fi
 
+  set -x
   current_time=$(ssh parksejin@${ip} "date '+%Y-%m-%d %H:%M:%S'")
   timedatectl set-time "$current_time"
+  set +x
   echo "RTC setting completed"
   exit 0
 }
